@@ -174,7 +174,7 @@ export default function Speech() {
 
       formData.append('file', wavBlob, 'recording.wav')
 
-      const response = await fetch('http://213.230.71.82:8000/process-audio/', {
+      const response = await fetch('https://api.enix.uz/process-audio/', {
         method: 'POST',
         body: formData
       })
