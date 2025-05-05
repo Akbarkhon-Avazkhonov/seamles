@@ -28,7 +28,6 @@ import Logo from '@components/layout/shared/Logo'
 import Illustrations from '@components/Illustrations'
 
 // Config Imports
-import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
