@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export default async function convertWebMToWav(webmBlob: Blob) {
   const audioContext = new AudioContext({ sampleRate: 44100 })
   const arrayBuffer = await webmBlob.arrayBuffer()

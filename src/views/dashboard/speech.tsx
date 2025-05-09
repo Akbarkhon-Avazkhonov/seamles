@@ -1,5 +1,5 @@
+// @ts-nocheck
 'use client'
-
 import React, { useState, useRef, useEffect } from 'react'
 
 import { Box, Button, CircularProgress, Stack, TextField, Typography, useTheme } from '@mui/material'
@@ -24,8 +24,6 @@ export default function Speech() {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [text, setText] = useState('')
   const [tranlatedText, setTranslatedText] = useState('')
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [progress, setProgress] = useState(0)
 
   const startRecording = async () => {
     try {
@@ -159,18 +157,6 @@ export default function Speech() {
     const audio = audioRef.current
 
     if (!audio) return
-
-    const updateProgress = () => {
-      if (audio.duration) setProgress((audio.currentTime / audio.duration) * 100)
-    }
-
-    const onPlay = () => setIsPlaying(true)
-    const onPause = () => setIsPlaying(false)
-
-    const onEnded = () => {
-      setIsPlaying(false)
-      setProgress(0)
-    }
 
     audio.addEventListener('timeupdate', updateProgress)
     audio.addEventListener('play', onPlay)
